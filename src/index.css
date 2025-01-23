@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-font {
+  font-family: "Unbounded", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -63,4 +73,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* gradient */
+.gradient{
+  background: rgb(195,206,255);
+background: radial-gradient(circle, rgba(195,206,255,1) 0%, rgba(255,255,255,1) 100%);
 }
