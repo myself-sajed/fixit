@@ -3,6 +3,7 @@ import Root from "./root";
 import Landing from "./app/landing/Landing";
 import Login from "./app/auth/pages/Login";
 import Protected from "./app/auth/pages/Protected";
+import CreateSpace from "./app/space/create/CreateSpace";
 
 export const router = createBrowserRouter([
     {
@@ -20,8 +21,8 @@ export const router = createBrowserRouter([
                 element: <Protected />,
                 children: [
                     {
-                        path: "",
-                        element: <p>this is the dashboard page</p>
+                        path: "create-space",
+                        element: <CreateSpace />
                     }
                 ]
             },
