@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
                         element: <AllSpaces />
                     },
                     {
-                        path: "spaces/space_id",
+                        path: "spaces/:space_id",
                         element: <SpaceOutlet />,
                         children: [
                             {
