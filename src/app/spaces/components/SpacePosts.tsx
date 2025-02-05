@@ -36,8 +36,8 @@ const SpacePosts = () => {
 
     return (
         <div className="col-span-2 p-4 space-y-4">
-            <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-2">
-                <div className="flex-1 relative">
+            <div className="grid grid-cols-4 gap-3">
+                <div className="flex-1 relative col-span-2">
                     <Input
                         placeholder="Search posts..."
                         value={search}
@@ -47,7 +47,7 @@ const SpacePosts = () => {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 </div>
                 <Select onValueChange={setFilter} defaultValue={filter}>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger>
                         <SelectValue placeholder="Filter by type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -57,7 +57,7 @@ const SpacePosts = () => {
                     </SelectContent>
                 </Select>
                 <Select onValueChange={setSort} defaultValue={sort}>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger>
                         <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
                     <SelectContent>
@@ -70,16 +70,16 @@ const SpacePosts = () => {
             <ScrollArea className="h-screen">
                 <div className="mr-5">
                     {filteredAndSortedPosts.map((post, index) => (
-                        <div key={post.id} className={cn(index !== 0 ? "border-t-2" : "", "hover:bg-muted/50 cursor-pointer")}>
+                        <div key={post.id} className={cn(index !== 0 ? "border-t-2" : "", "hover:bg-muted/50 cursor-pointer group")}>
                             <div className="px-3 py-7">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                                     <div className="flex-1 space-y-2">
                                         <div className="flex items-start justify-between gap-5">
-                                            <h3 className="font-semibold">{post.title}</h3>
+                                            <h3 className="font-semibold group-hover:text-primary">{post.title}</h3>
                                             <div className="mt-2 md:mt-0 flex items-center space-x-2">
                                                 <Badge variant={post.type === "bug" ? "destructive" : "default"}>{post.type}</Badge>
                                                 <Select defaultValue={post.status}>
-                                                    <SelectTrigger className="w-[140px] h-fit bg-muted text-xs font-semibold px-4 py-0.5 rounded-full gap-2">
+                                                    <SelectTrigger className="w-[140px] h-fit bg-muted/50 text-xs font-semibold px-4 py-0.5 rounded-full gap-2">
                                                         <SelectValue className="p-0 h-fit" placeholder="Status" />
                                                     </SelectTrigger>
                                                     <SelectContent>

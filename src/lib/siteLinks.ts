@@ -11,6 +11,10 @@ const siteLinks = {
     title: "Dashboard",
     href: "/fixit",
   },
+  spaces: {
+    title: "All Spaces",
+    href: "/fixit/spaces",
+  },
 };
 
 export default siteLinks;

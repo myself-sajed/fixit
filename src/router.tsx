@@ -7,6 +7,7 @@ import CreateSpace from "./app/create-space/CreateSpace";
 import AllSpaces from "./app/spaces/pages/AllSpaces";
 import SpaceOutlet from "./app/spaces/pages/SpaceOutlet";
 import SingleSpace from "./app/spaces/pages/SingleSpace";
+import SubmitBug from "./app/post/pages/SubmitBug";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
                             {
                                 path: "",
                                 element: <SingleSpace />
+                            },
+                            {
+                                path: "submit",
+                                element: <SubmitBug />
                             }
                         ]
                     }

@@ -8,6 +8,7 @@ import SpaceContributors from "../components/SpaceContributors"
 import SpaceRecentActivities from "../components/SpaceRecentActivities"
 import { Activity, ChartBar, Layout, Users } from "lucide-react"
 import SpaceHeader from "../components/SpaceHeader"
+import BackAndTitle from "@/components/custom/BackAndTitle"
 
 const SingleSpace = () => {
 
@@ -27,6 +28,7 @@ const SingleSpace = () => {
 
     return (
         <div className="min-h-screen">
+            <BackAndTitle title="Space Dashboard" />
             <div className="container mx-auto py-5 relative">
 
                 {/* SPACE HEADER */}
