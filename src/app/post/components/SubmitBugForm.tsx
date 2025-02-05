@@ -52,7 +52,7 @@ const SubmitBugForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-7 flex items-center flex-col justify-center w-full">
             <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="type">What are you reporting?</Label>
-                <RadioGroup className="grid grid-cols-2" value={formData.type} onValueChange={(value) => setFormData((prev) => ({ ...prev, type: value }))}>
+                <RadioGroup className="grid grid-cols-3" value={formData.type} onValueChange={(value) => setFormData((prev) => ({ ...prev, type: value }))}>
                     {items.map((item) => (
                         <div key={item.value} className="relative flex flex-col items-start gap-4 rounded-lg border p-3 w-full">
                             <div className="flex items-center gap-2">
@@ -84,10 +84,12 @@ const SubmitBugForm: React.FC = () => {
                     <input type="file" id="files" className="absolute inset-0 opacity-0 cursor-pointer" multiple onChange={handleFileChange} />
                 </label>
             </div>
-            <Button type="submit" startIcon={<Send className="ml-5" />} className="w-full">
-                Submit Form
-            </Button>
-            <Note className="my-5 mx-auto"><b>Note: </b>Make sure you provide a clear title, a detailed description, and, if possible, attach screenshots to help us understand your feedback better.</Note>
+            <div>
+                <Button type="submit" startIcon={<Send className="ml-5" />} className="w-full">
+                    Submit Form
+                </Button>
+                <Note className="my-2 mx-auto"><b>Note: </b>Make sure you provide a clear title, a detailed description, and, if possible, attach screenshots to help us understand your feedback better.</Note>
+            </div>
         </form>
     );
 };

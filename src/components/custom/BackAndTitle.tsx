@@ -28,8 +28,8 @@ const BackAndTitle = ({
     }
 
     return (
-        <div className={cn(className, "mt-3")}>
-            <div className="flex items-center gap-4 pb-2 border-b">
+        <div className={cn(className, "mt-3 border-b")}>
+            <div className="flex items-center gap-4 pb-2">
                 <ArrowLeft onClick={handleBack} className="w-10 h-10 hover:bg-muted cursor-pointer p-2 rounded-full" />
                 {title && <Heading3>{title}</Heading3>}
             </div>
